@@ -33,7 +33,7 @@ jobs:
      
       - name: Build docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/backend-image:latest -f backend/Dockerfile backend
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/backend:latest -f backend/Dockerfile backend
       - name : push image   
         run: |  
-          docker push ${{ secrets.DOCKER_USERNAME }}/backend-image:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/backend:latest
