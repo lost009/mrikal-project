@@ -44,7 +44,7 @@ jobs:
           MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
         run: |
           # Create an SSH private key file for use with SSH
-          echo "$SSH_PRIVATE_KEY" > id_rsa
+          echo "$EC2_SSH_KEY" > id_rsa
           chmod 600 id_rsa
 
           # Copy docker-compose.yml file to EC2 instance
