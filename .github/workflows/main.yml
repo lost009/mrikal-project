@@ -48,13 +48,12 @@ jobs:
           chmod 600 id_rsa
 
           # Copy docker-compose.yml file to EC2 instance
-          scp -i id_rsa -o StrictHostKeyChecking=no docker-compose.yml ubuntu@65.2.191.55:/home/ubuntu
+          scp -i id_rsa -o StrictHostKeyChecking=no compose.yml ubuntu@65.2.191.55:/home/ubuntu
 
           # Connect to EC2 instance and deploy
           ssh -i id_rsa -o StrictHostKeyChecking=no  ubuntu@65.2.191.55 << 'EOF'
             cd /home/ubuntu
             echo "MONGO_USERNAME=${MONGO_USERNAME}" > .env
             echo "MONGO_PASSWORD=${MONGO_PASSWORD}" >> .env
-            docker-compose pull
             docker-compose up -d
           EOF
