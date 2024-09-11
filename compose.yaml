@@ -3,7 +3,7 @@ version: '3.8'
 services:
   react:
     image: fe
-    container_name: react
+    container_name: dhaddu/frontend
     ports:
       - "3000:3000"
     environment:
@@ -13,7 +13,7 @@ services:
 
   node:
     image: back
-    container_name: node
+    container_name: dhaddu/backend
     ports:
       - "8080:8080"
     environment:
