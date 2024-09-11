@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_BACKEND_URL=http://192.168.43.107:8080/api/tasks   # can also give node ontainer ip 
+      - REACT_APP_BACKEND_URL=http://65.2.191.55:8080/api/tasks   # can also give node ontainer ip 
     depends_on:
       - node
 
