@@ -54,5 +54,5 @@ jobs:
           ssh -i id_rsa -o StrictHostKeyChecking=no  ubuntu@65.2.191.55 << 'EOF'
             echo "MONGO_USERNAME=${MONGO_USERNAME}" > .env
             echo "MONGO_PASSWORD=${MONGO_PASSWORD}" >> .env
-            docker-compose up -d
+            sudo docker-compose up -d
           EOF
